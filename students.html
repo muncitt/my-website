@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Students – MyKAFA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar__inner">
+      <a href="../index.html" class="navbar__logo"><span>🌿</span> MyKAFA</a>
+      <ul class="navbar__links">
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="grades.html">Enter Grades</a></li>
+        <li><a href="students.html" class="active">Students</a></li>
+        <li><a href="../index.html" class="btn-nav">Log Out</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <h1 class="page-header__title">👥 My Students</h1>
+    <p class="page-header__sub">Kelas 2 Pertengahan – 28 students enrolled</p>
+  </div>
+
+  <div class="page-content">
+    <div class="container">
+
+      <!-- Search & Filter -->
+      <div class="card" style="margin-bottom:20px;">
+        <div style="display:flex; gap:14px; flex-wrap:wrap; align-items:flex-end;">
+          <div class="form-group" style="margin:0; flex:2; min-width:200px;">
+            <label>Search Student</label>
+            <input type="text" id="searchInput" placeholder="Search by name or IC..." oninput="filterStudents()" />
+          </div>
+          <div class="form-group" style="margin:0; flex:1; min-width:140px;">
+            <label>Filter by Status</label>
+            <select onchange="filterStudents()">
+              <option value="">All Students</option>
+              <option value="active">Active</option>
+              <option value="at-risk">At Risk</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Student Cards -->
+      <div id="studentList" style="display:grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap:20px;">
+
+        <div class="card" style="margin:0;">
+          <div style="display:flex; align-items:center; gap:14px; margin-bottom:14px;">
+            <div style="width:48px; height:48px; background:#c8e6c9; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.4rem; flex-shrink:0;">👧</div>
+            <div>
+              <div style="font-weight:600; color:#1b5e20;">Nur Aisyah binti Ahmad</div>
+              <div style="font-size:0.8rem; color:#7a9e7b;">IC: 160203-06-1234</div>
+            </div>
+            <span class="badge badge--green" style="margin-left:auto;">Active</span>
+          </div>
+          <div style="font-size:0.85rem; color:#3a4f3b; display:grid; grid-template-columns:1fr 1fr; gap:6px;">
+            <div>📅 Age: 9</div>
+            <div>🏫 Kelas 2</div>
+            <div>📊 Avg: 80%</div>
+            <div>✅ Attend: 92%</div>
+            <div>👩 Parent: Puan Siti</div>
+            <div>📞 012-3456789</div>
+          </div>
+          <div style="margin-top:14px; display:flex; gap:8px;">
+            <button class="btn btn--outline btn--sm" onclick="showProfile('Nur Aisyah binti Ahmad')">View Profile</button>
+            <a href="grades.html" class="btn btn--primary btn--sm">Enter Grade</a>
+          </div>
+        </div>
+
+        <div class="card" style="margin:0;">
+          <div style="display:flex; align-items:center; gap:14px; margin-bottom:14px;">
+            <div style="width:48px; height:48px; background:#c8e6c9; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.4rem; flex-shrink:0;">👦</div>
+            <div>
+              <div style="font-weight:600; color:#1b5e20;">Muhammad Irfan bin Zaki</div>
+              <div style="font-size:0.8rem; color:#7a9e7b;">IC: 160510-14-5678</div>
+            </div>
+            <span class="badge badge--green" style="margin-left:auto;">Active</span>
+          </div>
+          <div style="font-size:0.85rem; color:#3a4f3b; display:grid; grid-template-columns:1fr 1fr; gap:6px;">
+            <div>📅 Age: 9</div>
+            <div>🏫 Kelas 2</div>
+            <div>📊 Avg: 85%</div>
+            <div>✅ Attend: 88%</div>
+            <div>👨 Parent: En. Zaki</div>
+            <div>📞 011-9876543</div>
+          </div>
+          <div style="margin-top:14px; display:flex; gap:8px;">
+            <button class="btn btn--outline btn--sm" onclick="showProfile('Muhammad Irfan bin Zaki')">View Profile</button>
+            <a href="grades.html" class="btn btn--primary btn--sm">Enter Grade</a>
+          </div>
+        </div>
+
+        <div class="card" style="margin:0; border-color:#f9a825;">
+          <div style="display:flex; align-items:center; gap:14px; margin-bottom:14px;">
+            <div style="width:48px; height:48px; background:#fff9c4; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.4rem; flex-shrink:0;">👧</div>
+            <div>
+              <div style="font-weight:600; color:#1b5e20;">Siti Hajar binti Razali</div>
+              <div style="font-size:0.8rem; color:#7a9e7b;">IC: 160715-08-9012</div>
+            </div>
+            <span class="badge badge--yellow" style="margin-left:auto;">At Risk</span>
+          </div>
+          <div style="font-size:0.85rem; color:#3a4f3b; display:grid; grid-template-columns:1fr 1fr; gap:6px;">
+            <div>📅 Age: 9</div>
+            <div>🏫 Kelas 2</div>
+            <div>📊 Avg: 65%</div>
+            <div>⚠️ Attend: 75%</div>
+            <div>👩 Parent: Puan Razali</div>
+            <div>📞 013-1122334</div>
+          </div>
+          <div class="alert alert--warning" style="margin-top:10px; padding:8px 12px; font-size:0.82rem;">
+            ⚠️ Low attendance – parent contact recommended
+          </div>
+          <div style="margin-top:10px; display:flex; gap:8px;">
+            <button class="btn btn--outline btn--sm" onclick="showProfile('Siti Hajar binti Razali')">View Profile</button>
+            <a href="grades.html" class="btn btn--primary btn--sm">Enter Grade</a>
+          </div>
+        </div>
+
+        <div class="card" style="margin:0;">
+          <div style="display:flex; align-items:center; gap:14px; margin-bottom:14px;">
+            <div style="width:48px; height:48px; background:#c8e6c9; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.4rem; flex-shrink:0;">👦</div>
+            <div>
+              <div style="font-weight:600; color:#1b5e20;">Ahmad Faris bin Kamal</div>
+              <div style="font-size:0.8rem; color:#7a9e7b;">IC: 160101-03-3456</div>
+            </div>
+            <span class="badge badge--green" style="margin-left:auto;">Active</span>
+          </div>
+          <div style="font-size:0.85rem; color:#3a4f3b; display:grid; grid-template-columns:1fr 1fr; gap:6px;">
+            <div>📅 Age: 9</div>
+            <div>🏫 Kelas 2</div>
+            <div>📊 Avg: 91%</div>
+            <div>✅ Attend: 95%</div>
+            <div>👨 Parent: En. Kamal</div>
+            <div>📞 019-5544332</div>
+          </div>
+          <div style="margin-top:14px; display:flex; gap:8px;">
+            <button class="btn btn--outline btn--sm" onclick="showProfile('Ahmad Faris bin Kamal')">View Profile</button>
+            <a href="grades.html" class="btn btn--primary btn--sm">Enter Grade</a>
+          </div>
+        </div>
+
+        <div class="card" style="margin:0; border-color:#ef9a9a;">
+          <div style="display:flex; align-items:center; gap:14px; margin-bottom:14px;">
+            <div style="width:48px; height:48px; background:#ffebee; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.4rem; flex-shrink:0;">👧</div>
+            <div>
+              <div style="font-weight:600; color:#1b5e20;">Nurul Hana binti Ismail</div>
+              <div style="font-size:0.8rem; color:#7a9e7b;">IC: 160820-11-7890</div>
+            </div>
+            <span class="badge badge--red" style="margin-left:auto;">Absent Often</span>
+          </div>
+          <div style="font-size:0.85rem; color:#3a4f3b; display:grid; grid-template-columns:1fr 1fr; gap:6px;">
+            <div>📅 Age: 9</div>
+            <div>🏫 Kelas 2</div>
+            <div>📊 Avg: 55%</div>
+            <div>🔴 Attend: 60%</div>
+            <div>👩 Parent: Puan Ismail</div>
+            <div>📞 017-6677889</div>
+          </div>
+          <div class="alert alert--warning" style="margin-top:10px; padding:8px 12px; font-size:0.82rem;">
+            🔴 Urgent: Frequent absences – immediate follow-up needed
+          </div>
+          <div style="margin-top:10px; display:flex; gap:8px;">
+            <button class="btn btn--outline btn--sm" onclick="showProfile('Nurul Hana binti Ismail')">View Profile</button>
+            <a href="grades.html" class="btn btn--primary btn--sm">Enter Grade</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <p>🌿 MyKAFA – Smart School Management System</p>
+    </div>
+  </footer>
+
+  <script>
+    function showProfile(name) {
+      alert(`📋 Student Profile\n\nName: ${name}\n\nFull profile view coming soon. You can view grades, attendance history, and parent contact details here.`);
+    }
+
+    function filterStudents() {
+      const query = document.getElementById('searchInput').value.toLowerCase();
+      document.querySelectorAll('#studentList .card').forEach(card => {
+        const name = card.querySelector('[style*="font-weight:600"]')?.textContent.toLowerCase() || '';
+        card.style.display = name.includes(query) ? '' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>
