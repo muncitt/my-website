@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MyKAFA – Smart School Management</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo">
+        <span>🌿</span> MyKAFA
+      </a>
+      <ul class="navbar__links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="parent/login.html">Parent Portal</a></li>
+        <li><a href="teacher/login.html">Teacher Portal</a></li>
+        <li><a href="parent/register.html" class="btn-nav">Get Started</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container">
+      <div class="hero__badge">🌿 Smart School Management System</div>
+      <h1 class="hero__title">Welcome to <span>MyKAFA</span></h1>
+      <p class="hero__subtitle">
+        Making school life easier for parents and teachers — register students, pay fees, track grades, and manage classrooms all in one place.
+      </p>
+      <div class="hero__actions">
+        <a href="parent/login.html" class="btn btn--primary">👨‍👩‍👧 Parent Portal</a>
+        <a href="teacher/login.html" class="btn btn--secondary">👩‍🏫 Teacher Portal</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- STATS -->
+  <section class="section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <span class="stat-card__number">500+</span>
+          <div class="stat-card__label">Students Enrolled</div>
+        </div>
+        <div class="stat-card">
+          <span class="stat-card__number">40+</span>
+          <div class="stat-card__label">Teachers</div>
+        </div>
+        <div class="stat-card">
+          <span class="stat-card__number">20+</span>
+          <div class="stat-card__label">Classes</div>
+        </div>
+        <div class="stat-card">
+          <span class="stat-card__number">98%</span>
+          <div class="stat-card__label">Parent Satisfaction</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTALS -->
+  <section class="section section--alt" id="features">
+    <div class="container">
+      <p class="section__label">Portals</p>
+      <h2 class="section__title">Everything You Need</h2>
+      <p class="section__subtitle">Two dedicated portals designed for parents and teachers to make school management seamless.</p>
+      <div class="portal-grid">
+
+        <!-- Parent Card -->
+        <div class="portal-card">
+          <span class="portal-card__icon">👨‍👩‍👧</span>
+          <h3 class="portal-card__title">Parent Portal</h3>
+          <p class="portal-card__desc">Stay connected with your child's education. Register, pay, and monitor progress from anywhere.</p>
+          <ul class="portal-card__features">
+            <li>Register your child online</li>
+            <li>Pay registration fees securely</li>
+            <li>View exam results & grades</li>
+            <li>Check attendance records</li>
+            <li>Receive school announcements</li>
+          </ul>
+          <a href="parent/login.html" class="btn btn--primary btn--full">Access Parent Portal</a>
+        </div>
+
+        <!-- Teacher Card -->
+        <div class="portal-card">
+          <span class="portal-card__icon">👩‍🏫</span>
+          <h3 class="portal-card__title">Teacher Portal</h3>
+          <p class="portal-card__desc">Manage your class efficiently. Enter grades, view student profiles, and communicate with ease.</p>
+          <ul class="portal-card__features">
+            <li>Enter & update exam grades</li>
+            <li>View student information</li>
+            <li>Manage class attendance</li>
+            <li>Generate grade reports</li>
+            <li>Post class announcements</li>
+          </ul>
+          <a href="teacher/login.html" class="btn btn--secondary btn--full">Access Teacher Portal</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section" id="how-it-works">
+    <div class="container">
+      <p class="section__label">Process</p>
+      <h2 class="section__title">How It Works</h2>
+      <p class="section__subtitle">Getting started is simple. Follow these easy steps.</p>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-card__num">1</div>
+          <div class="step-card__title">Create Account</div>
+          <p class="step-card__desc">Parents sign up with their details to create a family account.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-card__num">2</div>
+          <div class="step-card__title">Register Child</div>
+          <p class="step-card__desc">Fill in your child's information and submit the registration form.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-card__num">3</div>
+          <div class="step-card__title">Pay Fees</div>
+          <p class="step-card__desc">Complete registration by paying the fees securely online.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-card__num">4</div>
+          <div class="step-card__title">Track Progress</div>
+          <p class="step-card__desc">Monitor your child's grades and attendance anytime, anywhere.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section--alt">
+    <div class="container" style="text-align:center;">
+      <h2 class="section__title">Ready to Get Started?</h2>
+      <p class="section__subtitle">Join hundreds of families already using MyKAFA to stay connected with their children's education.</p>
+      <a href="parent/register.html" class="btn btn--primary">Register Your Child Today</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>🌿 MyKAFA – Smart School Management System &nbsp;·&nbsp; <a href="parent/login.html">Parent Portal</a> &nbsp;·&nbsp; <a href="teacher/login.html">Teacher Portal</a></p>
+      <p style="margin-top:8px; opacity:0.7; font-size:0.8rem;">Built with ✨ and AI at Women In Tech Workshop · #GivetoGain</p>
+    </div>
+  </footer>
+
+</body>
+</html>
