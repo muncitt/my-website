@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Announcements – MyKAFA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar__inner">
+      <a href="../index.html" class="navbar__logo"><span>🌿</span> MyKAFA</a>
+      <ul class="navbar__links">
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="grades.html">Enter Grades</a></li>
+        <li><a href="students.html">Students</a></li>
+        <li><a href="../index.html" class="btn-nav">Log Out</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <h1 class="page-header__title">📢 Announcements</h1>
+    <p class="page-header__sub">Post and manage class announcements for parents</p>
+  </div>
+
+  <div class="page-content">
+    <div class="container--narrow">
+
+      <!-- Post new -->
+      <div class="card">
+        <h2 class="card__title">✏️ Post New Announcement</h2>
+        <div class="form-group">
+          <label>Title</label>
+          <input type="text" id="annTitle" placeholder="e.g. Exam Schedule Update" />
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea id="annMsg" rows="4" placeholder="Write your announcement here..."></textarea>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Target Audience</label>
+            <select>
+              <option>All Parents – Kelas 2</option>
+              <option>All Parents – All Classes</option>
+              <option>Specific Student</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Priority</label>
+            <select id="annPriority">
+              <option value="info">Normal</option>
+              <option value="warning">Urgent</option>
+            </select>
+          </div>
+        </div>
+        <button class="btn btn--primary" onclick="postAnnouncement()">📢 Post Announcement</button>
+      </div>
+
+      <!-- Existing announcements -->
+      <div class="card">
+        <h2 class="card__title">📋 Posted Announcements</h2>
+        <div id="annList" style="display:flex; flex-direction:column; gap:12px;">
+          <div class="alert alert--warning">
+            <span>📅</span>
+            <div>
+              <strong>Final Exam Schedule</strong>
+              <p style="margin-top:4px; font-size:0.88rem;">Final year exams will be held on 15–19 September 2025. Please ensure your child is prepared.</p>
+              <p style="margin-top:4px; font-size:0.78rem; opacity:0.7;">Posted: 20 April 2025 · Ustazah Rohani</p>
+            </div>
+          </div>
+          <div class="alert alert--info">
+            <span>📚</span>
+            <div>
+              <strong>Homework Reminder</strong>
+              <p style="margin-top:4px; font-size:0.88rem;">Please remind your child to complete the Jawi exercise book pages 12–15 by this Friday.</p>
+              <p style="margin-top:4px; font-size:0.78rem; opacity:0.7;">Posted: 18 April 2025 · Ustazah Rohani</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <p>🌿 MyKAFA – Smart School Management System</p>
+    </div>
+  </footer>
+
+  <script>
+    function postAnnouncement() {
+      const title = document.getElementById('annTitle').value.trim();
+      const msg = document.getElementById('annMsg').value.trim();
+      const priority = document.getElementById('annPriority').value;
+      if (!title || !msg) { alert('Please fill in both title and message.'); return; }
+
+      const div = document.createElement('div');
+      div.className = `alert alert--${priority}`;
+      div.innerHTML = `
+        <span>${priority === 'warning' ? '⚠️' : '📢'}</span>
+        <div>
+          <strong>${title}</strong>
+          <p style="margin-top:4px; font-size:0.88rem;">${msg}</p>
+          <p style="margin-top:4px; font-size:0.78rem; opacity:0.7;">Posted: Just now · Ustazah Rohani</p>
+        </div>
+      `;
+      document.getElementById('annList').prepend(div);
+      document.getElementById('annTitle').value = '';
+      document.getElementById('annMsg').value = '';
+      alert('✅ Announcement posted! Parents will be notified.');
+    }
+  </script>
+</body>
+</html>
