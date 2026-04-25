@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>View Grades – MyKAFA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar__inner">
+      <a href="../index.html" class="navbar__logo"><span>🌿</span> MyKAFA</a>
+      <ul class="navbar__links">
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="grades.html" class="active">Grades</a></li>
+        <li><a href="register.html">Register Child</a></li>
+        <li><a href="../index.html" class="btn-nav">Log Out</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <h1 class="page-header__title">📊 Exam Results</h1>
+    <p class="page-header__sub">Nur Aisyah binti Ahmad – Kelas 2 Pertengahan</p>
+  </div>
+
+  <div class="page-content">
+    <div class="container">
+
+      <!-- Summary -->
+      <div class="dash-grid" style="margin-bottom:28px;">
+        <div class="dash-card">
+          <div class="dash-card__icon">🏅</div>
+          <div class="dash-card__value">85</div>
+          <div class="dash-card__label">Overall Average</div>
+        </div>
+        <div class="dash-card">
+          <div class="dash-card__icon">⭐</div>
+          <div class="dash-card__value">B+</div>
+          <div class="dash-card__label">Overall Grade</div>
+        </div>
+        <div class="dash-card">
+          <div class="dash-card__icon">📚</div>
+          <div class="dash-card__value">4</div>
+          <div class="dash-card__label">Subjects</div>
+        </div>
+        <div class="dash-card">
+          <div class="dash-card__icon">🏆</div>
+          <div class="dash-card__value">3rd</div>
+          <div class="dash-card__label">Class Rank</div>
+        </div>
+      </div>
+
+      <!-- Tabs for exams -->
+      <div class="tabs">
+        <button class="tab-btn active" onclick="showTab('midyear')">Mid-Year 2025</button>
+        <button class="tab-btn" onclick="showTab('final')">Final Year 2025</button>
+        <button class="tab-btn" onclick="showTab('monthly')">Monthly Tests</button>
+      </div>
+
+      <!-- Mid Year -->
+      <div class="tab-panel active" id="midyear">
+        <div class="card">
+          <h2 class="card__title">Mid-Year Examination 2025</h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Subject</th>
+                  <th>Teacher</th>
+                  <th>Score</th>
+                  <th>Max</th>
+                  <th>%</th>
+                  <th>Grade</th>
+                  <th>Remarks</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Al-Quran</td>
+                  <td>Ustaz Hafiz</td>
+                  <td>88</td>
+                  <td>100</td>
+                  <td>88%</td>
+                  <td><span class="badge badge--green">A</span></td>
+                  <td>Excellent</td>
+                </tr>
+                <tr>
+                  <td>Fardhu Ain</td>
+                  <td>Ustazah Rohani</td>
+                  <td>76</td>
+                  <td>100</td>
+                  <td>76%</td>
+                  <td><span class="badge badge--blue">B</span></td>
+                  <td>Good</td>
+                </tr>
+                <tr>
+                  <td>Jawi</td>
+                  <td>Ustazah Nora</td>
+                  <td>91</td>
+                  <td>100</td>
+                  <td>91%</td>
+                  <td><span class="badge badge--green">A</span></td>
+                  <td>Excellent</td>
+                </tr>
+                <tr>
+                  <td>Sirah</td>
+                  <td>Ustaz Farid</td>
+                  <td>65</td>
+                  <td>100</td>
+                  <td>65%</td>
+                  <td><span class="badge badge--yellow">C</span></td>
+                  <td>Needs improvement</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Final Year -->
+      <div class="tab-panel" id="final">
+        <div class="card">
+          <h2 class="card__title">Final Year Examination 2025</h2>
+          <div class="alert alert--warning">
+            <span>⏳</span>
+            <span>Final year exams are scheduled for 15–19 September 2025. Results will be available after grading is complete.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Monthly -->
+      <div class="tab-panel" id="monthly">
+        <div class="card">
+          <h2 class="card__title">Monthly Test Results</h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Month</th>
+                  <th>Subject</th>
+                  <th>Score</th>
+                  <th>Grade</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>March 2025</td><td>Al-Quran</td><td>82/100</td><td><span class="badge badge--green">A</span></td></tr>
+                <tr><td>March 2025</td><td>Jawi</td><td>78/100</td><td><span class="badge badge--blue">B</span></td></tr>
+                <tr><td>April 2025</td><td>Fardhu Ain</td><td>70/100</td><td><span class="badge badge--blue">B</span></td></tr>
+                <tr><td>April 2025</td><td>Sirah</td><td>60/100</td><td><span class="badge badge--yellow">C</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <p>🌿 MyKAFA – Smart School Management System</p>
+    </div>
+  </footer>
+
+  <script>
+    function showTab(id) {
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      event.target.classList.add('active');
+    }
+  </script>
+</body>
+</html>

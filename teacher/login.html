@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teacher Login – MyKAFA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar__inner">
+      <a href="../index.html" class="navbar__logo"><span>🌿</span> MyKAFA</a>
+      <ul class="navbar__links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../parent/login.html">Parent Portal</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <h1 class="page-header__title">👩‍🏫 Teacher Portal</h1>
+    <p class="page-header__sub">Sign in to manage your class, enter grades, and view student information</p>
+  </div>
+
+  <div class="page-content">
+    <div class="container--narrow">
+      <div class="card">
+        <h2 class="card__title">Teacher Sign In</h2>
+        <form onsubmit="handleLogin(event)">
+          <div class="form-group">
+            <label for="staffid">Staff ID / Email</label>
+            <input type="text" id="staffid" placeholder="e.g. T001 or teacher@mykafa.edu.my" required />
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter your password" required />
+          </div>
+          <button type="submit" class="btn btn--primary btn--full" style="margin-top:8px;">Sign In</button>
+        </form>
+      </div>
+
+      <div class="alert alert--info">
+        <span>💡</span>
+        <span>Demo: Enter any Staff ID and password, then click Sign In to explore the teacher portal.</span>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <p>🌿 MyKAFA – Smart School Management System</p>
+    </div>
+  </footer>
+
+  <script>
+    function handleLogin(e) {
+      e.preventDefault();
+      window.location.href = 'dashboard.html';
+    }
+  </script>
+</body>
+</html>

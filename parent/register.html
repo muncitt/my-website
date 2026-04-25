@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register Child – MyKAFA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar__inner">
+      <a href="../index.html" class="navbar__logo"><span>🌿</span> MyKAFA</a>
+      <ul class="navbar__links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="login.html">Sign In</a></li>
+        <li><a href="../teacher/login.html">Teacher Portal</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <h1 class="page-header__title">📋 Register Your Child</h1>
+    <p class="page-header__sub">Fill in the details below to enrol your child in MyKAFA</p>
+  </div>
+
+  <div class="page-content">
+    <div class="container--narrow">
+
+      <!-- Step indicator -->
+      <div class="tabs" id="stepTabs">
+        <button class="tab-btn active" onclick="showStep(0)">1. Parent Info</button>
+        <button class="tab-btn" onclick="showStep(1)">2. Child Info</button>
+        <button class="tab-btn" onclick="showStep(2)">3. Payment</button>
+      </div>
+
+      <!-- Step 1: Parent Info -->
+      <div class="tab-panel active" id="step0">
+        <div class="card">
+          <h2 class="card__title">Parent / Guardian Information</h2>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Full Name</label>
+              <input type="text" placeholder="e.g. Ahmad bin Ali" required />
+            </div>
+            <div class="form-group">
+              <label>IC Number</label>
+              <input type="text" placeholder="e.g. 900101-01-1234" required />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input type="tel" placeholder="e.g. 012-3456789" required />
+            </div>
+            <div class="form-group">
+              <label>Email Address</label>
+              <input type="email" placeholder="parent@email.com" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Home Address</label>
+            <input type="text" placeholder="Full address" required />
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Password</label>
+              <input type="password" placeholder="Create a password" required />
+            </div>
+            <div class="form-group">
+              <label>Confirm Password</label>
+              <input type="password" placeholder="Repeat password" required />
+            </div>
+          </div>
+          <button class="btn btn--primary" onclick="showStep(1)" style="margin-top:8px;">Next: Child Info →</button>
+        </div>
+      </div>
+
+      <!-- Step 2: Child Info -->
+      <div class="tab-panel" id="step1">
+        <div class="card">
+          <h2 class="card__title">Child's Information</h2>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Child's Full Name</label>
+              <input type="text" placeholder="e.g. Nur Aisyah binti Ahmad" required />
+            </div>
+            <div class="form-group">
+              <label>Date of Birth</label>
+              <input type="date" required />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Gender</label>
+              <select>
+                <option value="">Select gender</option>
+                <option>Female</option>
+                <option>Male</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>IC / Birth Certificate No.</label>
+              <input type="text" placeholder="e.g. 150101-01-1234" required />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Class / Level</label>
+              <select>
+                <option value="">Select class</option>
+                <option>Kelas 1 – Asas</option>
+                <option>Kelas 2 – Pertengahan</option>
+                <option>Kelas 3 – Lanjutan</option>
+                <option>Kelas 4 – Mahir</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>School Name</label>
+              <input type="text" placeholder="Current school" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Medical Conditions / Allergies (if any)</label>
+            <textarea rows="2" placeholder="Leave blank if none"></textarea>
+          </div>
+          <div style="display:flex; gap:12px; margin-top:8px;">
+            <button class="btn btn--outline" onclick="showStep(0)">← Back</button>
+            <button class="btn btn--primary" onclick="showStep(2)">Next: Payment →</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 3: Payment -->
+      <div class="tab-panel" id="step2">
+        <div class="card">
+          <h2 class="card__title">Registration Fee Payment</h2>
+          <div class="payment-summary">
+            <div class="payment-summary__row"><span>Registration Fee</span><span>RM 50.00</span></div>
+            <div class="payment-summary__row"><span>Uniform (optional)</span><span>RM 30.00</span></div>
+            <div class="payment-summary__row"><span>Learning Materials</span><span>RM 20.00</span></div>
+            <div class="payment-summary__row"><span><strong>Total</strong></span><span><strong>RM 100.00</strong></span></div>
+          </div>
+          <div class="form-group">
+            <label>Payment Method</label>
+            <select id="payMethod" onchange="togglePayFields()">
+              <option value="">Select payment method</option>
+              <option value="card">Credit / Debit Card</option>
+              <option value="fpx">Online Banking (FPX)</option>
+              <option value="ewallet">e-Wallet (Touch 'n Go / GrabPay)</option>
+            </select>
+          </div>
+          <div id="cardFields" style="display:none;">
+            <div class="form-group">
+              <label>Card Number</label>
+              <input type="text" placeholder="1234 5678 9012 3456" maxlength="19" />
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Expiry Date</label>
+                <input type="text" placeholder="MM/YY" maxlength="5" />
+              </div>
+              <div class="form-group">
+                <label>CVV</label>
+                <input type="text" placeholder="123" maxlength="3" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Cardholder Name</label>
+              <input type="text" placeholder="Name on card" />
+            </div>
+          </div>
+          <div id="fpxFields" style="display:none;">
+            <div class="form-group">
+              <label>Select Bank</label>
+              <select>
+                <option value="">Choose your bank</option>
+                <option>Maybank2u</option>
+                <option>CIMB Clicks</option>
+                <option>Public Bank</option>
+                <option>RHB Now</option>
+                <option>Hong Leong Connect</option>
+                <option>AmOnline</option>
+              </select>
+            </div>
+          </div>
+          <div id="ewalletFields" style="display:none;">
+            <div class="form-group">
+              <label>Select e-Wallet</label>
+              <select>
+                <option value="">Choose e-wallet</option>
+                <option>Touch 'n Go eWallet</option>
+                <option>GrabPay</option>
+                <option>Boost</option>
+                <option>ShopeePay</option>
+              </select>
+            </div>
+          </div>
+          <div style="display:flex; gap:12px; margin-top:8px;">
+            <button class="btn btn--outline" onclick="showStep(1)">← Back</button>
+            <button class="btn btn--primary" onclick="submitRegistration()">✅ Complete Registration</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <p>🌿 MyKAFA – Smart School Management System</p>
+    </div>
+  </footer>
+
+  <script>
+    function showStep(index) {
+      document.querySelectorAll('.tab-panel').forEach((p, i) => {
+        p.classList.toggle('active', i === index);
+      });
+      document.querySelectorAll('.tab-btn').forEach((b, i) => {
+        b.classList.toggle('active', i === index);
+      });
+    }
+
+    function togglePayFields() {
+      const method = document.getElementById('payMethod').value;
+      document.getElementById('cardFields').style.display = method === 'card' ? 'block' : 'none';
+      document.getElementById('fpxFields').style.display = method === 'fpx' ? 'block' : 'none';
+      document.getElementById('ewalletFields').style.display = method === 'ewallet' ? 'block' : 'none';
+    }
+
+    function submitRegistration() {
+      alert('🎉 Registration successful! Welcome to MyKAFA. You can now log in to your parent portal.');
+      window.location.href = 'dashboard.html';
+    }
+  </script>
+</body>
+</html>

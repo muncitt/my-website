@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Parent Dashboard – MyKAFA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar__inner">
+      <a href="../index.html" class="navbar__logo"><span>🌿</span> MyKAFA</a>
+      <ul class="navbar__links">
+        <li><a href="dashboard.html" class="active">Dashboard</a></li>
+        <li><a href="grades.html">Grades</a></li>
+        <li><a href="register.html">Register Child</a></li>
+        <li><a href="../index.html" class="btn-nav">Log Out</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="dashboard-layout">
+
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar__user">
+          <div class="sidebar__avatar">👩</div>
+          <div class="sidebar__name">Puan Siti Aminah</div>
+          <div class="sidebar__role">Parent Account</div>
+        </div>
+        <ul class="sidebar__nav">
+          <li><a href="dashboard.html" class="active"><span class="nav-icon">🏠</span> Dashboard</a></li>
+          <li><a href="grades.html"><span class="nav-icon">📊</span> View Grades</a></li>
+          <li><a href="register.html"><span class="nav-icon">📋</span> Register Child</a></li>
+          <li><a href="payment.html"><span class="nav-icon">💳</span> Payments</a></li>
+          <li><a href="#"><span class="nav-icon">📢</span> Announcements</a></li>
+          <li><a href="../index.html"><span class="nav-icon">🚪</span> Log Out</a></li>
+        </ul>
+      </aside>
+
+      <!-- Main Content -->
+      <main>
+        <div style="margin-bottom:24px;">
+          <h1 style="font-family:'Playfair Display',serif; color:#1b5e20; font-size:1.6rem;">Good morning, Puan Siti! 👋</h1>
+          <p style="color:#5a7a5c; font-size:0.95rem;">Here's an overview of your child's progress.</p>
+        </div>
+
+        <!-- Summary Cards -->
+        <div class="dash-grid">
+          <div class="dash-card">
+            <div class="dash-card__icon">👧</div>
+            <div class="dash-card__value">1</div>
+            <div class="dash-card__label">Registered Child</div>
+          </div>
+          <div class="dash-card">
+            <div class="dash-card__icon">📊</div>
+            <div class="dash-card__value">85%</div>
+            <div class="dash-card__label">Average Grade</div>
+          </div>
+          <div class="dash-card">
+            <div class="dash-card__icon">✅</div>
+            <div class="dash-card__value">92%</div>
+            <div class="dash-card__label">Attendance</div>
+          </div>
+          <div class="dash-card">
+            <div class="dash-card__icon">💳</div>
+            <div class="dash-card__value">Paid</div>
+            <div class="dash-card__label">Fee Status</div>
+          </div>
+        </div>
+
+        <!-- Child Info -->
+        <div class="card">
+          <h2 class="card__title">👧 My Child</h2>
+          <div style="display:flex; align-items:center; gap:20px; flex-wrap:wrap;">
+            <div style="width:60px; height:60px; background:#c8e6c9; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.8rem;">👧</div>
+            <div>
+              <div style="font-weight:600; color:#1b5e20; font-size:1.05rem;">Nur Aisyah binti Ahmad</div>
+              <div style="color:#5a7a5c; font-size:0.88rem;">Kelas 2 – Pertengahan &nbsp;·&nbsp; Age: 9</div>
+              <div style="margin-top:6px;"><span class="badge badge--green">Active</span></div>
+            </div>
+            <div style="margin-left:auto;">
+              <a href="grades.html" class="btn btn--outline btn--sm">View Grades</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent Grades -->
+        <div class="card">
+          <h2 class="card__title">📊 Recent Exam Results</h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Subject</th>
+                  <th>Exam</th>
+                  <th>Score</th>
+                  <th>Grade</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Al-Quran</td>
+                  <td>Mid-Year 2025</td>
+                  <td>88/100</td>
+                  <td><span class="badge badge--green">A</span></td>
+                </tr>
+                <tr>
+                  <td>Fardhu Ain</td>
+                  <td>Mid-Year 2025</td>
+                  <td>76/100</td>
+                  <td><span class="badge badge--blue">B</span></td>
+                </tr>
+                <tr>
+                  <td>Jawi</td>
+                  <td>Mid-Year 2025</td>
+                  <td>91/100</td>
+                  <td><span class="badge badge--green">A</span></td>
+                </tr>
+                <tr>
+                  <td>Sirah</td>
+                  <td>Mid-Year 2025</td>
+                  <td>65/100</td>
+                  <td><span class="badge badge--yellow">C</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div style="margin-top:14px;">
+            <a href="grades.html" class="btn btn--outline btn--sm">View All Results</a>
+          </div>
+        </div>
+
+        <!-- Announcements -->
+        <div class="card">
+          <h2 class="card__title">📢 Latest Announcements</h2>
+          <div style="display:flex; flex-direction:column; gap:12px;">
+            <div class="alert alert--info">
+              <span>📅</span>
+              <span><strong>Final Exam</strong> – Final year exams will be held on 15–19 September 2025. Please ensure your child is prepared.</span>
+            </div>
+            <div class="alert alert--warning">
+              <span>💳</span>
+              <span><strong>Fee Reminder</strong> – Second semester fees are due by 30 June 2025.</span>
+            </div>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <p>🌿 MyKAFA – Smart School Management System</p>
+    </div>
+  </footer>
+
+</body>
+</html>
