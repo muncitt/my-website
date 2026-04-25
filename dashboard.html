@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teacher Dashboard – MyKAFA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar__inner">
+      <a href="../index.html" class="navbar__logo"><span>🌿</span> MyKAFA</a>
+      <ul class="navbar__links">
+        <li><a href="dashboard.html" class="active">Dashboard</a></li>
+        <li><a href="grades.html">Enter Grades</a></li>
+        <li><a href="students.html">Students</a></li>
+        <li><a href="../index.html" class="btn-nav">Log Out</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="dashboard-layout">
+
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar__user">
+          <div class="sidebar__avatar">👩‍🏫</div>
+          <div class="sidebar__name">Ustazah Rohani</div>
+          <div class="sidebar__role">Teacher – Fardhu Ain</div>
+        </div>
+        <ul class="sidebar__nav">
+          <li><a href="dashboard.html" class="active"><span class="nav-icon">🏠</span> Dashboard</a></li>
+          <li><a href="grades.html"><span class="nav-icon">✏️</span> Enter Grades</a></li>
+          <li><a href="students.html"><span class="nav-icon">👥</span> My Students</a></li>
+          <li><a href="#"><span class="nav-icon">📅</span> Attendance</a></li>
+          <li><a href="#"><span class="nav-icon">📢</span> Announcements</a></li>
+          <li><a href="../index.html"><span class="nav-icon">🚪</span> Log Out</a></li>
+        </ul>
+      </aside>
+
+      <!-- Main -->
+      <main>
+        <div style="margin-bottom:24px;">
+          <h1 style="font-family:'Playfair Display',serif; color:#1b5e20; font-size:1.6rem;">Welcome, Ustazah Rohani! 👋</h1>
+          <p style="color:#5a7a5c; font-size:0.95rem;">Here's your class overview for today.</p>
+        </div>
+
+        <!-- Summary Cards -->
+        <div class="dash-grid">
+          <div class="dash-card">
+            <div class="dash-card__icon">👥</div>
+            <div class="dash-card__value">28</div>
+            <div class="dash-card__label">Total Students</div>
+          </div>
+          <div class="dash-card">
+            <div class="dash-card__icon">✅</div>
+            <div class="dash-card__value">25</div>
+            <div class="dash-card__label">Present Today</div>
+          </div>
+          <div class="dash-card">
+            <div class="dash-card__icon">📝</div>
+            <div class="dash-card__value">2</div>
+            <div class="dash-card__label">Pending Grades</div>
+          </div>
+          <div class="dash-card">
+            <div class="dash-card__icon">📊</div>
+            <div class="dash-card__value">78%</div>
+            <div class="dash-card__label">Class Average</div>
+          </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="card">
+          <h2 class="card__title">⚡ Quick Actions</h2>
+          <div style="display:flex; gap:12px; flex-wrap:wrap;">
+            <a href="grades.html" class="btn btn--primary btn--sm">✏️ Enter Exam Grades</a>
+            <a href="students.html" class="btn btn--outline btn--sm">👥 View Students</a>
+            <a href="#" class="btn btn--outline btn--sm">📅 Mark Attendance</a>
+            <a href="#" class="btn btn--outline btn--sm">📢 Post Announcement</a>
+          </div>
+        </div>
+
+        <!-- Recent Students -->
+        <div class="card">
+          <h2 class="card__title">👥 My Class – Kelas 2 Pertengahan</h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>No.</th>
+                  <th>Student Name</th>
+                  <th>Attendance</th>
+                  <th>Last Grade</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Nur Aisyah binti Ahmad</td>
+                  <td>92%</td>
+                  <td>76/100</td>
+                  <td><span class="badge badge--green">Active</span></td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Muhammad Irfan bin Zaki</td>
+                  <td>88%</td>
+                  <td>82/100</td>
+                  <td><span class="badge badge--green">Active</span></td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Siti Hajar binti Razali</td>
+                  <td>75%</td>
+                  <td>68/100</td>
+                  <td><span class="badge badge--yellow">At Risk</span></td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>Ahmad Faris bin Kamal</td>
+                  <td>95%</td>
+                  <td>90/100</td>
+                  <td><span class="badge badge--green">Active</span></td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>Nurul Hana binti Ismail</td>
+                  <td>60%</td>
+                  <td>55/100</td>
+                  <td><span class="badge badge--red">Absent Often</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div style="margin-top:14px;">
+            <a href="students.html" class="btn btn--outline btn--sm">View All Students</a>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <p>🌿 MyKAFA – Smart School Management System</p>
+    </div>
+  </footer>
+
+</body>
+</html>
